@@ -13,5 +13,13 @@ int main() {
         }
     }
 
+    
+    int suma = 0;
+    for(int i = 0; i < n; i++) {
+        suma = suma + matriz[i][n - 1 - i];
+    }
+
+    cout<<"La suma es: "<<suma<<endl;
+
     return 0;
 }
