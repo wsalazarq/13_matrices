@@ -60,4 +60,19 @@ int main(){
     for (int i = 0; i < m; i++) {
         cout<<"Ciudad "<<ciudades[i]<<": "<<ganadoresCiudad[i]<<endl;
     }
+
+    int votosCiudadGanador = 0;
+    string ciudadGanadora;
+    for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (partidos[j] == partidoGanador && votos[i][j] > votosCiudadGanador) {
+                votosCiudadGanador = votos[i][j];
+                ciudadGanadora = ciudades[i];
+            }
+        }
+    }
+
+    cout<<"La ciudad donde tuvo mayor votación el partido ganador es: "<<ciudadGanadora<<endl;
+
+    return 0;
 }
