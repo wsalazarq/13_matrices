@@ -42,7 +42,22 @@ int main(){
         }
     }
 
-
     cout<<"El partido ganador es: "<<partidoGanador<<" con "<< maxVotos<<" votos"<<endl;
-    
+
+    string ganadoresCiudad[m];
+
+    for (int i = 0; i < m; i++) {
+        int maxVotosCiudad = 0;
+        for (int j = 0; j < n; j++) {
+            if (votos[i][j] > maxVotosCiudad) {
+                maxVotosCiudad = votos[i][j];
+                ganadoresCiudad[i] = partidos[j];
+            }
+        }
+    }    
+
+    cout<<"El partido ganador por cada ciudad es:" <<endl;
+    for (int i = 0; i < m; i++) {
+        cout<<"Ciudad "<<ciudades[i]<<": "<<ganadoresCiudad[i]<<endl;
+    }
 }
