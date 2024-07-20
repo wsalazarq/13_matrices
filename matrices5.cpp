@@ -24,4 +24,25 @@ int main(){
             cout<<"Ingrese los votos del partido "<<partidos[j]<<" en la ciudad "<<ciudades[i]<<": ";cin>>votos[i][j];
         }
     }    
+    
+    int votosTotales[n];
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            votosTotales[j] += votos[i][j];
+        }
+    }
+
+    int maxVotos = 0;
+    string partidoGanador;
+    for (int j = 0; j < n; j++) {
+        if (votosTotales[j] > maxVotos) {
+            maxVotos = votosTotales[j];
+            partidoGanador = partidos[j];
+        }
+    }
+
+
+    cout<<"El partido ganador es: "<<partidoGanador<<" con "<< maxVotos<<" votos"<<endl;
+    
 }
