@@ -12,6 +12,14 @@ int main() {
         }
     }
 
+    int totalMes = 0;
+    for (int semana = 0; semana < 4; ++semana) {
+        for (int dia = 0; dia < 7; ++dia) {
+            totalSemanas[semana] += ventas[dia][semana];
+        }
+
+        totalMes += totalSemanas[semana];
+    }
     
     return 0;
 }
